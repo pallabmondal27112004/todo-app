@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk, Tuple } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const api="http://localhost:8000/todos"
+const api="http://localhost:8000/todos/"
+// const api="https://todoapp-backen-3.onrender.com/todos/"
 export const createTodo=createAsyncThunk('todos/createTodo', async(data)=>{
     console.log(data)
-    const response = await axios.post(api+'/',data)
+    const response = await axios.post(api,data)
     console.log(response.data)
     return response.data
 })
